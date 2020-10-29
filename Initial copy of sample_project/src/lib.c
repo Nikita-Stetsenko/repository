@@ -1,11 +1,4 @@
-/**
- * @file lib.c
- * @brief Файл з реалізацією функцій оперування тваринами
- *
- * @author Davydov V.
- * @date 14-apr-2020
- * @version 1.3
- */
+
 
 #include "lib.h"
 
@@ -25,6 +18,34 @@ char *get_animal_type_name(enum animal_type type)
 	case PIG:
 		result = "Свиня";
 		break;
+	case HUMAN:
+		result = "Людина";
+		break;
+	default:
+		result = "N/A";
+	}
+	return result;
+}
+
+char *get_animal_sound(enum animal_type type)
+{
+	char *result;
+	switch (type) {
+	case CAT:
+		result = "Meow";
+		break;
+	case DOG:
+		result = "Woof";
+		break;
+	case COW:
+		result = "Mu";
+		break;
+	case PIG:
+		result = "Xru";
+		break;
+	case HUMAN:
+		result = "Hello";
+		break;
 	default:
 		result = "N/A";
 	}
@@ -33,6 +54,8 @@ char *get_animal_type_name(enum animal_type type)
 
 void generate_animal(struct animal *entity)
 {
+	
+	entity->height = (unsigned int)rand() % INT8_MAX;
 	entity->height = (unsigned int)rand() % INT8_MAX;
 	entity->weight = (unsigned int)rand() % INT8_MAX;
 	entity->type = (unsigned int)rand() % ANIMAL_TYPE_COUNT;
@@ -45,5 +68,6 @@ void show_animals(struct animal animals[], unsigned int count)
 		printf("%s: зріст = %u см, маса = %u гр. \n",
 		       get_animal_type_name(animals[i].type), animals[i].height,
 		       animals[i].weight);
+		printf("Звук:%s", get_animal_sound(animals[i].type));
 	}
 }
