@@ -1,18 +1,32 @@
+#include<stdio.h>
+
 int main()
 {
-	char equation;
-	char tru;
-	int m = 2;
-	int k = 4;
-	int n = 6;
-	if (k < m < n) {
-		equation = tru;
+	int m = 8;
+	int k = 15;
+	int n = 4;
+
+	int temp;
+
+	if (k > n) {
+		temp = k;
+		k = n;
+		n = temp;
 	}
+
 	if (k > m) {
-		m += k;
+		temp = k;
+		k = m;
+		m = temp;
 	}
+
 	if (m > n) {
-		n += m;
+		temp = m;
+		m = n;
+		n = temp;
 	}
+
+	printf_s("%i < %i < %i", k, m, n);
+
 	return 0;
 }
