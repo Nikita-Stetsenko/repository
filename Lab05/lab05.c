@@ -1,35 +1,66 @@
 #include<stdio.h>
 
+int cycleFor(int x, int y);
+int cycleWhile(int x, int y);
+int cycleDoWhile(int x, int y);
+
 int main()
 {
     int x, y;
 
-    printf_s("Enter the first number: ");
+    printf("Enter the first number: ");
     scanf_s("%d", &x);
-    printf_s("Enter the second number: ");
+    printf("Enter the second number: ");
     scanf_s("%d", &y);
 
-    int i, NOD1, NOD2, NOD3;
-    for (i = x; i > 0; i--);
-    if (x == 0 && y == 0);
-    NOD1 = i;
+    int nod1, nod2, nod3;
+    nod1 = cycleFor(x, y);
+    nod2 = cycleWhile(x, y);
+    nod3 = cycleDoWhile(x, y);
 
-    printf_s("NOD1 = ");
-    printf_s("%d\n", NOD1);
+    printf("NOD1 = ");
+    printf("%d\n", nod1);
 
-    while (x != y) {
-        if (x > y) {
+    printf("NOD2 = ");
+    printf("%d\n", nod2);
+
+    printf("NOD3 = ");
+    printf("%d\n", nod3);
+
+    return 0;
+}
+
+int cycleFor(int x, int y)
+{
+    int nod1 = x;
+    for (int i = x; i > 0; i--)
+    {
+        if (x == 0 && y == 0);
+        {
+            nod1 = i;
+        }
+    }
+    return nod1;
+}
+
+int cycleWhile(int x, int y)
+{
+    while (x != y)
+    {
+        if (x > y)
+        {
             x = x - y;
         }
-        else {
+        else
+        {
             y = y - x;
         }
     }
-    NOD2 = x;
+    return x;
+}
 
-    printf_s("NOD2 = ");
-    printf_s("%d\n", NOD2);
-
+int cycleDoWhile(int x, int y)
+{
     do {
         if (x > y) {
             x = x - y;
@@ -38,10 +69,6 @@ int main()
             y = y - x;
         }
     } while (x != y);
-    NOD3 = x;
 
-    printf_s("NOD3 = ");
-    printf_s("%d\n", NOD3);
-
-    return 0;
+    return x;
 }
