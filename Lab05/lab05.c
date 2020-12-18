@@ -33,9 +33,10 @@ int main()
 int cycleFor(int x, int y)
 {
     int nod1 = x;
+
     for (int i = x; i > 0; i--)
     {
-        if (x == 0 && y == 0);
+        if (x % i == 0 && y % i == 0)
         {
             nod1 = i;
         }
