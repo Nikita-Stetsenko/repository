@@ -19,17 +19,12 @@
 - Структура програми:
 
 ```
-├── dist
-│   └── main.bin
-├── doc
-│   ├── assets
-│   │   └── block_shema.png
-│   └── lab08.md
-├── Doxyfile
-├── Makefile
-├── README.md
-└── src
-    └── main.c
+├─ Lab08
+├── block_shema.png
+├── lab08.md
+├── 1.png
+├── 2.png
+
 ```
 
 - Код програми:
@@ -80,15 +75,3 @@ int main()
 ### Висновки:
 
 Навчились використовувати цикли при написанні програми.
-
-
-
-
-
-
-
-
-
-
-
-
